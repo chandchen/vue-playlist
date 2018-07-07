@@ -1,10 +1,17 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <app-header v-on:titleChanged="updateTitle($event)" v-bind:title="title"></app-header>
+<!--     <app-header v-on:titleChanged="updateTitle($event)" v-bind:title="title"></app-header>
     <users v-bind:users="users"></users>
     <users v-bind:users="users"></users>
-    <app-footer v-bind:title="title"></app-footer>
+    <app-footer v-bind:title="title"></app-footer> -->
+    <ul>
+<!--       <li><a href="/">Home</a></li>
+      <li><a href="/helloworld">Hello World</a></li> -->
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/helloworld">Hello World</router-link></li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -19,27 +26,27 @@ export default {
   data(){
     return {
       // title: 'Hello world!'
-      users: [
-        {name: 'Chand', position: 'Developer', show: false},
-        {name: 'Chand', position: 'Developer', show: false},
-        {name: 'Chand', position: 'Developer', show: false},
-        {name: 'Chand', position: 'Developer', show: false},
-        {name: 'Chand', position: 'Developer', show: false},
-        {name: 'Chand', position: 'Developer', show: false}
-      ],
-      title: "Pass a value here, (number/string/boolean)",
+      // users: [
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false}
+      // ],
+      // title: "Pass a value here, (number/string/boolean)",
     }
   },
   methods: {
-    updateTitle(title) {
-      this.title = title
-    }
+    // updateTitle(title) {
+    //   this.title = title
+    // }
   },
   components: {
     // HelloWorld,
-    'users': Users,
-    'app-header': Header,
-    'app-footer': Footer,
+    // 'users': Users,
+    // 'app-header': Header,
+    // 'app-footer': Footer,
   }
 }
 </script>
