@@ -8,18 +8,36 @@
       </li>
     </ul>
 
+    <button v-on:click="deleteUser">Delete</button>
+
   </div>
 </template>
 
 <script>
 export default {
   name: 'users',
+  // props: ['users'],
+  props: {
+    users: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
-      users: [
-        {name: 'Chand', position: 'Developer', show: false},
-        {name: 'Chand', position: 'Developer', show: false}
-      ]
+      // users: [
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false},
+      //   {name: 'Chand', position: 'Developer', show: false}
+      // ]
+    }
+  },
+  methods: {
+    deleteUser: function() {
+      this.users.pop();
     }
   }
 }

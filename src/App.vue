@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <app-header></app-header>
-    <users></users>
-    <app-footer></app-footer>
+    <app-header v-on:titleChanged="updateTitle($event)" v-bind:title="title"></app-header>
+    <users v-bind:users="users"></users>
+    <users v-bind:users="users"></users>
+    <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -17,7 +18,21 @@ export default {
   name: 'App',
   data(){
     return {
-      title: 'Hello world!'
+      // title: 'Hello world!'
+      users: [
+        {name: 'Chand', position: 'Developer', show: false},
+        {name: 'Chand', position: 'Developer', show: false},
+        {name: 'Chand', position: 'Developer', show: false},
+        {name: 'Chand', position: 'Developer', show: false},
+        {name: 'Chand', position: 'Developer', show: false},
+        {name: 'Chand', position: 'Developer', show: false}
+      ],
+      title: "Pass a value here, (number/string/boolean)",
+    }
+  },
+  methods: {
+    updateTitle(title) {
+      this.title = title
     }
   },
   components: {
