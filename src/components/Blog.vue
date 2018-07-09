@@ -1,31 +1,21 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-<!--     <app-header v-on:titleChanged="updateTitle($event)" v-bind:title="title"></app-header>
-    <users v-bind:users="users"></users>
-    <users v-bind:users="users"></users>
-    <app-footer v-bind:title="title"></app-footer> -->
+  <div id="blog">
+    <h2>Vue.js Router</h2>
     <ul>
-<!--       <li><a href="/">Home</a></li>
-      <li><a href="/helloworld">Hello World</a></li> -->
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/helloworld">Hello World</router-link></li>
-      <li><router-link to="/user/foo">Blog</router-link></li>
+      <li><router-link to="/user/foo">/user/foo</router-link></li>
+      <!-- <router-link to="/user/bar">/user/bar</router-link> -->
+      <li><router-link to="/user/foo/profile">/user/foo/profile</router-link></li>
+      <li><router-link to="/user/foo/posts">/user/foo/posts</router-link></li>
     </ul>
-    <button v-on:click="goBack">Previous</button>
-    <button v-on:click="goForward">Next</button>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld'
-import Users from './components/Users'
-import Header from './components/Header'
-import Footer from './components/Footer'
+
 
 export default {
-  name: 'App',
+  name: 'Blog',
   data(){
     return {
       // title: 'Hello world!'
@@ -44,12 +34,12 @@ export default {
     // updateTitle(title) {
     //   this.title = title
     // }
-    goBack() {
-      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
-    },
-    goForward() {
-      window.history.length > 1 ? this.$router.go(1) : this.$router.push('/')
-    }
+    // goBack() {
+    //   window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+    // },
+    // goForward() {
+    //   window.history.length > 1 ? this.$router.go(1) : this.$router.push('/')
+    // }
   },
   components: {
     // HelloWorld,
