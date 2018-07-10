@@ -31,24 +31,50 @@ const userHome = { template: '<div>Home</div>'}
 const userProfile = { template: '<div>Profile</div>'}
 const userPosts = { template: '<div>Posts</div>'}
 
+const Foo = { template: '<div>foo 111111</div>' }
+const Bar = { template: '<div>bar 222222</div>' }
+const Baz = { template: '<div>baz 333333</div>' }
+
 // router config
 const router = new VueRouter({
 	routes: [
-        {path: "/", component: Home},
-        {path: "/helloworld", component: HelloWorld},
-        {path: "/user/:id", component: Blog,
-         children: [
-           {
-           	 path: '', component: userHome
-           },
-           {
-             path: 'profile',
-             component: userProfile
-           },
-           {
-           	 path: 'posts',
-           	 component: userPosts
-           }
+        {
+        	path: "/",
+            name: "home",
+            component: Home},
+        {
+        	path: "/helloworld",
+        	name: "helloworld",
+        	component: HelloWorld},
+        {
+        	path: "/user/:id",
+        	name: "blog",
+        	component: Blog,
+            children: [
+              {
+           	     path: '',
+           	     name: 'index',
+           	     component: userHome
+              },
+              {
+                 path: 'profile',
+                 name: 'profile',
+                 component: userProfile
+              },
+              {
+            	 path: 'posts',
+            	 name: 'posts',
+           	     component: userPosts
+              },
+              {
+              	path: 'named-router',
+              	name: 'named-router',
+              	components: {
+              		default: Foo,
+              		apple: Bar,
+              		banana: Baz
+              	}
+              }
         ]
      },
 	],

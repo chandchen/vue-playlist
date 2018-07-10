@@ -6,8 +6,12 @@
       <!-- <router-link to="/user/bar">/user/bar</router-link> -->
       <li><router-link to="/user/foo/profile">/user/foo/profile</router-link></li>
       <li><router-link to="/user/foo/posts">/user/foo/posts</router-link></li>
+
+      <li><router-link :to="{ name: 'named-router', params: { userId: 123 }}">Named router</router-link></li>
     </ul>
-    <router-view></router-view>
+    <router-view class="view-one"></router-view>
+    <router-view class="view-two" name="apple"></router-view>
+    <router-view class="view-three" name="banana"></router-view>
   </div>
 </template>
 
